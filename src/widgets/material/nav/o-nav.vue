@@ -1,31 +1,20 @@
 <template>
-  <nav class="">
-    <ul>
-      <li v-for="item in routes">
-        <router-link :to="item.to">{{item.name}}</router-link>
-      </li>
+  <nav class="o-nav fix flex center">
+    <ul class="flex">
+      <a-nav-item v-for="route in routes" :route="route"/>
     </ul>
   </nav>
 </template>
 <script>
 export default {
-  name: "",
-  components: {},
-  props: ['routes'],
-  // created(){},
-  // mounted(){},
-  // updated(){},
-  // activated(){}
-  computed: {},
-  watch: {},
-  methods: {},
-  data () {
-    return {
+  name: "o-nav",
+  components: {
+    'a-nav-item': require('./a-nav-item.vue').default,
 
-    }
-  }
+  },
+  props: ['routes'],
 }
 </script>
-<style></style>
 <style lang="less" scoped>
+@import url("./o-nav.less");
 </style>

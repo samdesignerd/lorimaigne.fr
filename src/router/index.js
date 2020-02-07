@@ -3,16 +3,9 @@ import Router from 'vue-router'
 
 Vue.use(Router)
 
-let routes = [
-  {
-    path: '/',
-    component: 'landing-page',
-  },
-  {
-    path: '*',
-    component: '404',
-  },
-]
+let routes = [...require("./routes.js").default] // <- making a copy
+routes.push({ path: '/', redirect: '/video' })
+routes.push({ path: '*', redirect: '/' })
 
 export default new Router({
   routes: routes.map((route)=>{

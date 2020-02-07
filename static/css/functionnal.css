@@ -41,3 +41,24 @@
 .spread{ height: 100%; width: 100%; }
 .contain{ max-width: 100%; max-height: 100%; }
 .full{ width: 100vw; height: 100vh; }
+
+
+.page-wrap{
+  align-items: center;
+  padding-top: var(--nav-height);
+  padding-bottom: var(--nav-height);
+}
+
+.icon{
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  stroke: #fff;
+  stroke-width: 1.2px;
+  fill: none;
+  cursor: pointer;
+}
+
+.shad1{
+  box-shadow: -7px -7px 12px 0 rgba(255,255,255,.1),
+              12px 12px 12px 0 rgba(0,0,0,.2);
+}

@@ -1,10 +1,16 @@
 import Vue from 'vue'
-import App from './src/widgets/App.vue'
-import Commons from './src/widgets/commons';
+import App from './widgets/App.vue'
+import Commons from './widgets/commons';
 
 Commons.forEach(component => {
     Vue.component(component.name, component);
 });
+
+Vue.prototype.$hub = new Vue()
+Vue.prototype.$content = require('./assets/content/content.js').default
+
+// Vue.prototype.$mediaSrc = '/static/content/'
+Vue.prototype.$mediaSrc = 'https://lori-maigne-media.s3.amazonaws.com/'
 
 new Vue({
   el: '#app',
